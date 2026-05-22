@@ -27,6 +27,7 @@ struct Application_iosApp: App {
     }()
     
     init() {
+        DIContainer.shared.setupPersistence(container: sharedModelContainer)
         DIContainer.shared.setupServices()
         DIContainer.shared.setupViewModels()
     }

@@ -29,11 +29,26 @@ private extension TabBarView {
         TabView(selection: $viewModel.selectedTab) {
             ForEach(TabType.allCases, id: \.self) { tab in
                 Tab(tab.title, systemImage: tab.systemImage, value: tab) {
-                    NavigationStack {
-                        ZStack {
-                        }
+                    switch tab {
+                    case .home: homeTab()
+                    case .search: searchTab()
                     }
                 }
+            }
+        }
+    }
+    
+    @ViewBuilder
+    private func homeTab() -> some View {
+        NavigationStack {
+            HomeView(viewModel: DIContainer.shared.resolve(HomeViewModel.self))
+        }
+    }
+    
+    @ViewBuilder
+    private func searchTab() -> some View {
+        NavigationStack {
+            ZStack {
             }
         }
     }

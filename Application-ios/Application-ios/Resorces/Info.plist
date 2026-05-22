@@ -4,5 +4,10 @@
 <dict>
 	<key>GOOGLE_BOOKS_API_KEY</key>
 	<string>AIzaSyBPP8rJ1lsZGKSXY-DfIIZ4HE0d2l9h398</string>
+    <key>NSAppTransportSecurity</key>
+    <dict>
+        <key>NSAllowsArbitraryLoads</key>
+        <true/>
+    </dict>
 </dict>
 </plist>
