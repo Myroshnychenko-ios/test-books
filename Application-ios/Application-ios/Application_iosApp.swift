@@ -10,12 +10,15 @@ import SwiftData
 
 @main
 struct Application_iosApp: App {
+    
+    // MARK: - SwiftData Model Container
+    
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Item.self,
+            BookEntity.self,
+            NoteEntity.self
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-
         do {
             return try ModelContainer(for: schema, configurations: [modelConfiguration])
         } catch {
