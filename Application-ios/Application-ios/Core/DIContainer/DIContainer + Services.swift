@@ -10,6 +10,6 @@ import Foundation
 extension DIContainer {
     
     func setupServices() {
-        // TODO
+        register(NetworkAPIProtocol.self, instance: NetworkAPI())
     }
 }

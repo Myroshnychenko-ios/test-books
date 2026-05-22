@@ -22,10 +22,15 @@ struct Application_iosApp: App {
             fatalError("Could not create ModelContainer: \(error)")
         }
     }()
+    
+    init() {
+        DIContainer.shared.setupServices()
+        DIContainer.shared.setupViewModels()
+    }
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabBarView(viewModel: DIContainer.shared.resolve(TabBarViewModel.self))
         }
         .modelContainer(sharedModelContainer)
     }

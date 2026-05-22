@@ -10,6 +10,8 @@ import Foundation
 extension DIContainer {
     
     func setupViewModels() {
-        // TODO
+        register(TabBarViewModel.self) {
+            TabBarViewModel()
+        }
     }
 }

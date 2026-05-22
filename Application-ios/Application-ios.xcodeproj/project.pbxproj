@@ -17,6 +17,8 @@
 		2802F7B82FC0ADE500157B04 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2802F7B72FC0ADE500157B04 /* DIContainer.swift */; };
 		2802F7BA2FC0B17000157B04 /* DIContainer + Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2802F7B92FC0B17000157B04 /* DIContainer + Services.swift */; };
 		2802F7BC2FC0B17800157B04 /* DIContainer + ViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2802F7BB2FC0B17800157B04 /* DIContainer + ViewModels.swift */; };
+		2802F7C02FC0B2CC00157B04 /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2802F7BF2FC0B2CC00157B04 /* TabBarViewModel.swift */; };
+		2802F7C22FC0B3FC00157B04 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2802F7C12FC0B3FC00157B04 /* TabBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		2802F7B72FC0ADE500157B04 /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
 		2802F7B92FC0B17000157B04 /* DIContainer + Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DIContainer + Services.swift"; sourceTree = "<group>"; };
 		2802F7BB2FC0B17800157B04 /* DIContainer + ViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DIContainer + ViewModels.swift"; sourceTree = "<group>"; };
+		2802F7BF2FC0B2CC00157B04 /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
+		2802F7C12FC0B3FC00157B04 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,7 @@
 			children = (
 				2802F7A62FC083E300157B04 /* Core */,
 				2802F7B52FC0AA7C00157B04 /* Resorces */,
+				2802F7BD2FC0B27D00157B04 /* Features */,
 				2802F79D2FC0806000157B04 /* Application_iosApp.swift */,
 				2802F79F2FC0806000157B04 /* ContentView.swift */,
 				2802F7A02FC0806000157B04 /* Item.swift */,
@@ -143,6 +148,23 @@
 			path = DIContainer;
 			sourceTree = "<group>";
 		};
+		2802F7BD2FC0B27D00157B04 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				2802F7BE2FC0B28900157B04 /* TabBar */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		2802F7BE2FC0B28900157B04 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				2802F7C12FC0B3FC00157B04 /* TabBarView.swift */,
+				2802F7BF2FC0B2CC00157B04 /* TabBarViewModel.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -216,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2802F7B82FC0ADE500157B04 /* DIContainer.swift in Sources */,
+				2802F7C22FC0B3FC00157B04 /* TabBarView.swift in Sources */,
 				2802F7A22FC0806000157B04 /* Application_iosApp.swift in Sources */,
 				2802F7B32FC087F300157B04 /* BooksResponse.swift in Sources */,
 				2802F7A32FC0806000157B04 /* ContentView.swift in Sources */,
@@ -224,6 +247,7 @@
 				2802F7AB2FC084F800157B04 /* NetworkAPI.swift in Sources */,
 				2802F7BA2FC0B17000157B04 /* DIContainer + Services.swift in Sources */,
 				2802F7A42FC0806000157B04 /* Item.swift in Sources */,
+				2802F7C02FC0B2CC00157B04 /* TabBarViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
