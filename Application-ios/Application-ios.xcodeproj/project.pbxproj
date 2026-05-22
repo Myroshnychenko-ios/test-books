@@ -11,6 +11,9 @@
 		2802F7A32FC0806000157B04 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2802F79F2FC0806000157B04 /* ContentView.swift */; };
 		2802F7A42FC0806000157B04 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2802F7A02FC0806000157B04 /* Item.swift */; };
 		2802F7A52FC0806000157B04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2802F79E2FC0806000157B04 /* Assets.xcassets */; };
+		2802F7AB2FC084F800157B04 /* NetworkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2802F7AA2FC084F800157B04 /* NetworkAPI.swift */; };
+		2802F7B12FC086C700157B04 /* BookDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2802F7B02FC086C700157B04 /* BookDTO.swift */; };
+		2802F7B32FC087F300157B04 /* BooksResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2802F7B22FC087F300157B04 /* BooksResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,10 @@
 		2802F79E2FC0806000157B04 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2802F79F2FC0806000157B04 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2802F7A02FC0806000157B04 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		2802F7AA2FC084F800157B04 /* NetworkAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPI.swift; sourceTree = "<group>"; };
+		2802F7B02FC086C700157B04 /* BookDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDTO.swift; sourceTree = "<group>"; };
+		2802F7B22FC087F300157B04 /* BooksResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksResponse.swift; sourceTree = "<group>"; };
+		2802F7B42FC0A9E100157B04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,12 +58,72 @@
 		2802F7A12FC0806000157B04 /* Application-ios */ = {
 			isa = PBXGroup;
 			children = (
+				2802F7A62FC083E300157B04 /* Core */,
+				2802F7B52FC0AA7C00157B04 /* Resorces */,
 				2802F79D2FC0806000157B04 /* Application_iosApp.swift */,
-				2802F79E2FC0806000157B04 /* Assets.xcassets */,
 				2802F79F2FC0806000157B04 /* ContentView.swift */,
 				2802F7A02FC0806000157B04 /* Item.swift */,
 			);
 			path = "Application-ios";
+			sourceTree = "<group>";
+		};
+		2802F7A62FC083E300157B04 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				2802F7A72FC083E900157B04 /* Services */,
+				2802F7A82FC083F200157B04 /* Models */,
+				2802F7AC2FC085DB00157B04 /* Utils */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		2802F7A72FC083E900157B04 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				2802F7A92FC084EF00157B04 /* Network */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		2802F7A82FC083F200157B04 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2802F7AF2FC086BC00157B04 /* Network */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2802F7A92FC084EF00157B04 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				2802F7AA2FC084F800157B04 /* NetworkAPI.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		2802F7AC2FC085DB00157B04 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		2802F7AF2FC086BC00157B04 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				2802F7B22FC087F300157B04 /* BooksResponse.swift */,
+				2802F7B02FC086C700157B04 /* BookDTO.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		2802F7B52FC0AA7C00157B04 /* Resorces */ = {
+			isa = PBXGroup;
+			children = (
+				2802F7B42FC0A9E100157B04 /* Info.plist */,
+				2802F79E2FC0806000157B04 /* Assets.xcassets */,
+			);
+			path = Resorces;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -132,7 +199,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				2802F7A22FC0806000157B04 /* Application_iosApp.swift in Sources */,
+				2802F7B32FC087F300157B04 /* BooksResponse.swift in Sources */,
 				2802F7A32FC0806000157B04 /* ContentView.swift in Sources */,
+				2802F7B12FC086C700157B04 /* BookDTO.swift in Sources */,
+				2802F7AB2FC084F800157B04 /* NetworkAPI.swift in Sources */,
 				2802F7A42FC0806000157B04 /* Item.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,6 +341,7 @@
 				DEVELOPMENT_TEAM = XPBFBX9K2Q;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Application-ios/Resorces/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -303,6 +374,7 @@
 				DEVELOPMENT_TEAM = XPBFBX9K2Q;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Application-ios/Resorces/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

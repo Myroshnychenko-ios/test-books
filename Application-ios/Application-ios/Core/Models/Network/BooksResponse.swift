@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+struct BooksResponse: Codable, Sendable {
+    let items: [BookDTO]?
+}
