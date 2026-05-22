@@ -27,6 +27,11 @@ final class DIContainer {
         services[key] = factory
     }
     
+    func register<T, Arg>(_ type: T.Type, factory: @escaping (Arg) -> T) {
+        let key = String(describing: type)
+        services[key] = factory
+    }
+    
     func resolve<T>(_ type: T.Type) -> T {
         let key = String(describing: type)
         
@@ -38,6 +43,16 @@ final class DIContainer {
             let instance = factory()
             services[key] = instance
             return instance
+        }
+        
+        fatalError("❌ Service \(type) is not registered in DIContainer")
+    }
+    
+    func resolve<T, Arg>(_ type: T.Type, argument: Arg) -> T {
+        let key = String(describing: type)
+        
+        if let factory = services[key] as? (Arg) -> T {
+            return factory(argument)
         }
         
         fatalError("❌ Service \(type) is not registered in DIContainer")
