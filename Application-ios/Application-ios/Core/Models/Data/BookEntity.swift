@@ -9,7 +9,7 @@ import Foundation
 import SwiftData
 
 @Model
-final class BookEntity: Identifiable, Hashable {
+final class BookEntity: Identifiable {
     
     @Attribute(.unique) var id: String
     var title: String

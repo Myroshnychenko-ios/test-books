@@ -53,9 +53,7 @@ private extension HomeView {
         .navigationDestination(for: HomeRoute.self) { route in
             switch route {
             case .details(let book):
-                ZStack {
-                    // TODO
-                }
+                DetailsView(viewModel: DIContainer.shared.resolve(DetailsViewModel.self, argument: book))
             }
         }
         .task {

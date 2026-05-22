@@ -47,7 +47,7 @@ final class HomeViewModel: ObservableObject {
     func performRefresh() async {
         do {
             let dtos = try await network.searchBooks(query: query, maxResults: maxResults)
-            await saveBooks(dtos)
+            saveBooks(dtos)
             await fetchBooks()
         } catch {
             errorMessage = error.localizedDescription
@@ -60,7 +60,7 @@ final class HomeViewModel: ObservableObject {
         
         do {
             let dtos = try await network.searchBooks(query: query, maxResults: maxResults)
-            await saveBooks(dtos)
+            saveBooks(dtos)
             await fetchBooks()
         } catch {
             errorMessage = error.localizedDescription
@@ -69,9 +69,11 @@ final class HomeViewModel: ObservableObject {
         isLoading = false
     }
     
-    private func saveBooks(_ dtos: [BookDTO]) async {
+    private func saveBooks(_ dtos: [BookDTO]) {
         for dto in dtos {
-            let existing = try? modelContext.fetch(FetchDescriptor<BookEntity>(predicate: #Predicate { $0.id == dto.id })).first
+            let dtoID = dto.id
+            let descriptor = FetchDescriptor<BookEntity>(predicate: #Predicate { $0.id == dtoID })
+            let existing = try? modelContext.fetch(descriptor).first
             if existing == nil {
                 let entity = BookEntity(from: dto)
                 modelContext.insert(entity)

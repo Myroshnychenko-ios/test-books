@@ -12,7 +12,7 @@ extension DIContainer {
     
     func setupViewModels() {
         register(TabBarViewModel.self) {
-            TabBarViewModel()
+            return TabBarViewModel()
         }
         
         register(HomeViewModel.self) { [weak self] in
@@ -24,6 +24,16 @@ extension DIContainer {
             let container = self.resolve(ModelContainer.self)
             
             return HomeViewModel(network: network, modelContext: ModelContext(container))
+        }
+        
+        register(DetailsViewModel.self) { [weak self] (book: BookEntity) in
+            guard let self else {
+                fatalError("DIContainer deallocated")
+            }
+            
+            let container = self.resolve(ModelContainer.self)
+            
+            return DetailsViewModel(modelContext: ModelContext(container), book: book)
         }
     }
 }
